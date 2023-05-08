@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do app</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header-title">To do App</h1>
+        <button class="header-reset-button" type="button" onClick="window.location.reload()">Reset</button>
+    </header>
+    <main class="task-container">
+        <section class="task-container-header">
+            <h2 class="task-title">Task list</h2>
+            <button class="task-new-button" onclick="openNewTaskDialog(event)">New task</button>
+            <div class="new-task-div" id="createDivTask">
+                <!-- new task div -->
+                <form class="new-task-form">
+                    <label class="new-task-label" for="name">Task name</label>
+                    <input class="new-task-input" type="text">
+                    <label class="new-task-label" for="description">Description</label>
+                    <textarea class="new-task-textarea" cols="30" rows="4"></textarea>
+                    <div style="
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: row;
+                ">
+                        <button class="new-task-button" type="button" onclick="addTask(event)">Add</button>
+                        <button class="new-task-button cancel" type="button"
+                            onclick="cancelAction(event)">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="task-list-container">
+            <ul class="task-list">
+            </ul>
+            <div class="edit-task-div" id="editDivTask">
+                <form class="edit-task-form">
+                    <label class="edit-task-label" for="name">Task name</label>
+                    <input class="edit-task-input" type="text">
+                    <label class="edit-task-label" for="description">Description</label>
+                    <textarea class="edit-task-textarea" cols="30" rows="4"></textarea>
+                    <div style="
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: row;
+                    ">
+                        <button class="edit-task-button" type="button" onclick="confirmEdition(event)">Edit</button>
+                        <button class="edit-task-button cancel" type="button"
+                            onclick="cancelAction(event)">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer-text">
+            Developed by Jonnathan Rios - Costa Rica - 2023
+        </p>
+    </footer>
+
+    <script src="/index.js"></script>
+</body>
+
+</html>
